@@ -1,0 +1,71 @@
+id,Megnevezés,darabszám,max_tárolható,oszlop,sor,raktár
+1,Lucfenyő deszka 18x96x4000 mm,15,20,1,1,1
+2,Lucfenyő deszka 18x196x4000 mm,10,10,1,2,1
+3,üres,0,0,1,3,1
+4,Vörösfenyő deszka 18x96x4000 mm,18,20,1,4,1
+5,Vörösfenyő deszka 19×170x4000 mm,22,10,1,5,1
+6,Bükk deszka 18x96x4000 mm,18,20,1,6,1
+7,Bükk deszka 19×170x4000 mm,6,10,1,7,1
+8,üres,0,0,1,8,1
+9,Csertölgy deszka 18x96x4000 mm,20,20,1,9,1
+10,Csertölgy deszka 19×170 mm,7,10,1,10,1
+11,Lucfenyő deszka 18x96x4000 mm,14,20,1,11,1
+12,Lucfenyő deszka 18x196x4000 mm,8,10,1,12,1
+13,üres,0,0,1,13,1
+14,üres,0,0,1,14,1
+15,üres,0,0,1,15,1
+16,Elliotis fenyő rétegelt lemez 18X1250X2500 mm,9,10,3,1,1
+17,Elliotis fenyő rétegelt lemez 18X1250X2500 mm,10,10,3,2,1
+18,Nyír rétegelt lemez 6.5X1250X2500 mm,4,30,3,3,1
+19,Nyír rétegelt lemez 9X1250X2500 mm,18,20,3,4,1
+20,Nyír rétegelt lemez 18X1250X2500 mm,8,10,3,5,1
+21,Nyír rétegelt lemez 18X1250X2500 mm,10,10,3,6,1
+22,üres,0,0,3,7,1
+23,üres,0,0,3,8,1
+24,Nyír zsalutábla 9x1250x2500 mm,16,20,3,9,1
+25,Nyír zsalutábla 9x1250x2500 mm,20,20,3,10,1
+26,Nyír zsalutábla 18x1250x2500 mm,10,10,3,11,1
+27,Nyír zsalutábla 18x1250x2500 mm,10,10,3,12,1
+28,üres,0,0,3,13,1
+29,üres,0,0,3,14,1
+30,üres,0,0,3,15,1
+31,Fiókos szekrény A,3,5,1,1,2
+32,Fiókos szekrény B,2,5,1,2,2
+33,Könyvespolc A,1,1,1,3,2
+34,Könyvespolc A,1,1,1,4,2
+35,üres,0,0,1,5,2
+36,üres,0,0,1,6,2
+37,üres,0,0,1,7,2
+38,Éjjeliszekrény A,4,5,1,8,2
+39,Éjjeliszekrény B,2,5,1,9,2
+40,Éjjeliszekrény C,3,5,1,10,2
+41,üres,0,0,2,1,2
+42,Könyvespolc B,1,1,2,2,2
+43,Könyvespolc B,1,1,2,3,2
+44,üres,0,0,2,4,2
+45,Konyhabútor 1,1,1,2,5,2
+46,Konyhabútor 2,1,1,2,6,2
+47,Konyhabútor 3,1,1,2,7,2
+48,üres,0,0,2,8,2
+49,üres,0,0,2,9,2
+50,üres,0,0,2,10,2
+51,Támlás szék,3,5,3,1,2
+52,Támlás szék,5,5,3,2,2
+53,Támlás szék,5,5,3,3,2
+54,Ülőke,7,10,3,4,2
+55,Ülőke,10,10,3,5,2
+56,üres,0,0,3,6,2
+57,Kisasztal A,2,2,3,7,2
+58,Kisasztal A,1,2,3,8,2
+59,Kisasztal B,2,2,3,9,2
+60,üres,0,0,3,10,2
+61,Asztal,1,1,4,1,2
+62,üres,0,0,4,2,2
+63,Polc A,2,10,4,3,2
+64,Polc B,8,10,4,4,2
+65,Polc C,1,10,4,5,2
+66,üres,0,0,4,6,2
+67,üres,0,0,4,7,2
+68,Fogas A,3,10,4,8,2
+69,Fogas B,5,10,4,9,2
+70,üres,0,0,4,10,2
