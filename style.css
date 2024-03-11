@@ -1,0 +1,11 @@
+.storage1table {
+    float: right; 
+    margin-right: 2vw;
+}
+.storage2table {
+    float: right;
+}
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
