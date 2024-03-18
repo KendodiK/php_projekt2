@@ -5,7 +5,50 @@
 .storage2table {
     float: right;
 }
-table, th, td {
+
+table, tr {
     border: 2px solid black;
     border-collapse: collapse;
+}
+
+td {
+    position: relative;
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+.almostFull {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(48, 230, 48);
+    border: 2px solid rgb(48, 230, 48);
+}
+
+.enough {
+    width: 100%;
+    height: 100%;
+    background-color: orange;
+    border: 2px solid orange;
+}
+
+.almostEmpty {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    color: white;
+    border: 2px solid red;
+}
+
+.full {
+    width: 100%;
+    height: 100%;
+    background-color: lightseagreen;
+    border: 2px solid lightseagreen;
+}
+
+.empty {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border: 2px solid white;
 }

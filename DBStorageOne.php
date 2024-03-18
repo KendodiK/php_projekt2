@@ -40,4 +40,28 @@ class DBStorageOne extends DB {
 
         return $resoult->fetch_all(MYSQLI_ASSOC);
     }
+
+    function getColumnNum() {
+        $resoult = $this->mysqli->query("SELECT COUNT(DISTINCT shelfColumn) AS countOfColumn FROM storageone");
+
+        return $resoult->fetch_assoc();
+    }
+
+    function getRowNum() {
+        $resoult = $this->mysqli->query("SELECT COUNT(DISTINCT shelfRow) AS countOfRow FROM storageone");
+
+        return $resoult->fetch_assoc();
+    }
+
+    function getByColumnAndRow($column, $row) {
+        $resoult = $this->mysqli->query("SELECT * FROM storageone WHERE shelfColumn = '$column' AND shelfRow = '$row'");
+
+        return $resoult->fetch_assoc();
+    }
+
+    function getById($id) {
+        $resoult = $this->mysqli->query("SELECT * FROM storageone WHERE id = '$id'");
+
+        return $resoult->fetch_assoc();
+    }
 }

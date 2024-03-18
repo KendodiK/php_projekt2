@@ -40,4 +40,22 @@ class DBStorageTwo extends DB {
 
         return $resoult->fetch_all(MYSQLI_ASSOC);
     }
+
+    function getColumnNum() {
+        $resoult = $this->mysqli->query("SELECT COUNT(DISTINCT shelfColumn) AS countOfColumn FROM storagetwo");
+
+        return $resoult->fetch_assoc();
+    }
+
+    function getByColumnAndRow($column, $row) {
+        $resoult = $this->mysqli->query("SELECT * FROM storagetwo WHERE shelfColumn = '$column' AND shelfRow = '$row'");
+
+        return $resoult->fetch_assoc();
+    }
+
+    function getById($id) {
+        $resoult = $this->mysqli->query("SELECT * FROM storagetwo WHERE id = '$id'");
+
+        return $resoult->fetch_assoc();
+    }
 }

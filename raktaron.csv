@@ -14,21 +14,21 @@ id,Megnevezés,darabszám,max_tárolható,oszlop,sor,raktár
 13,üres,0,0,1,13,1
 14,üres,0,0,1,14,1
 15,üres,0,0,1,15,1
-16,Elliotis fenyő rétegelt lemez 18X1250X2500 mm,9,10,3,1,1
-17,Elliotis fenyő rétegelt lemez 18X1250X2500 mm,10,10,3,2,1
-18,Nyír rétegelt lemez 6.5X1250X2500 mm,4,30,3,3,1
-19,Nyír rétegelt lemez 9X1250X2500 mm,18,20,3,4,1
-20,Nyír rétegelt lemez 18X1250X2500 mm,8,10,3,5,1
-21,Nyír rétegelt lemez 18X1250X2500 mm,10,10,3,6,1
-22,üres,0,0,3,7,1
-23,üres,0,0,3,8,1
-24,Nyír zsalutábla 9x1250x2500 mm,16,20,3,9,1
-25,Nyír zsalutábla 9x1250x2500 mm,20,20,3,10,1
-26,Nyír zsalutábla 18x1250x2500 mm,10,10,3,11,1
-27,Nyír zsalutábla 18x1250x2500 mm,10,10,3,12,1
-28,üres,0,0,3,13,1
-29,üres,0,0,3,14,1
-30,üres,0,0,3,15,1
+16,Elliotis fenyő rétegelt lemez 18X1250X2500 mm,9,10,2,1,1
+17,Elliotis fenyő rétegelt lemez 18X1250X2500 mm,10,10,2,2,1
+18,Nyír rétegelt lemez 6.5X1250X2500 mm,4,30,2,3,1
+19,Nyír rétegelt lemez 9X1250X2500 mm,18,20,2,4,1
+20,Nyír rétegelt lemez 18X1250X2500 mm,8,10,2,5,1
+21,Nyír rétegelt lemez 18X1250X2500 mm,10,10,2,6,1
+22,üres,0,0,2,7,1
+23,üres,0,0,2,8,1
+24,Nyír zsalutábla 9x1250x2500 mm,16,20,2,9,1
+25,Nyír zsalutábla 9x1250x2500 mm,20,20,2,10,1
+26,Nyír zsalutábla 18x1250x2500 mm,10,10,2,11,1
+27,Nyír zsalutábla 18x1250x2500 mm,10,10,2,12,1
+28,üres,0,0,2,13,1
+29,üres,0,0,2,14,1
+30,üres,0,0,2,15,1
 31,Fiókos szekrény A,3,5,1,1,2
 32,Fiókos szekrény B,2,5,1,2,2
 33,Könyvespolc A,1,1,1,3,2
