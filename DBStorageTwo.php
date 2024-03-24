@@ -58,4 +58,23 @@ class DBStorageTwo extends DB {
 
         return $resoult->fetch_assoc();
     }
+
+    function modify() {
+        $id = $_POST['modifyId'];
+        $newName = $_POST['newName'];
+        $newColumn = $_POST['newColumn'];
+        $newRow = $_POST['newRow'];
+        $newQuantity = $_POST['newQuantity'];
+        if(isset($_POST['newMax'])) {
+            $newMax = $_POST['newMax'];
+            $this->mysqli->query("UPDATE storageone SET name = '$newName', shelfColumn = '$newColumn', shelfRow = '$newRow', quantity = '$newQuantity', max = '$newMax' WHERE id = '$id'");
+            echo '<script>displayTable("Two")</script>;';           
+        }
+        else {
+            $this->mysqli->query("UPDATE storageone SET name = '$newName', shelfColumn = '$newColumn', shelfRow = '$newRow', quantity = '$newQuantity' WHERE id = '$id'");
+            echo '<script>displayTable("Two")</script>;';
+        }
+
+        unset($_POST);
+    }
 }

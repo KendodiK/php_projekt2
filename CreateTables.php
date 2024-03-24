@@ -44,16 +44,19 @@
                 $numberOfShelfs = $this->dbstorageTwo->getColumnNum();
             }
             
+            $result = "";
             for($i = 0; $i < count($table)/$numberOfShelfs['countOfColumn']; $i++){
-                echo"<tr>";
+                $result .= "<tr>";
                     for($j = 0; $j < $numberOfShelfs['countOfColumn']; $j++) {
                         $shelfStepper = count($table)/$numberOfShelfs['countOfColumn']*$j;
                         $classForCss = $this->whichClass($table[$i+$shelfStepper]['quantity'], $table[$i+$shelfStepper]['max']);
                         $id = $table[$i+$shelfStepper]['id'];
                         $value = $table[$i+$shelfStepper]['name'];
-                        echo"<td><button onclick='openOpcions(\"{$id}\")' class='{$classForCss}' id='btn-open-{$id}'>{$value}</button></td>";
+                        $result .= "<td><button onclick='openOpcions(\"{$id}\")' class='{$classForCss}' id='btn-open-{$id}'>{$value}</button></td>";
                     }
-                echo"</tr>";
+                $result .= "</tr>";
             }
+
+            return $result;
         }
     }

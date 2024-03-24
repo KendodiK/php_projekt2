@@ -6,7 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./script.js"></script>
     <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
+    <title>Raktár nyilvántartás</title>
 </head>
 <body>
     <?php
@@ -57,19 +57,40 @@
 
     echo"</div";
 
-    echo "<div class='storage2table'>
+    echo "
+    <label for='dispTable'>
+    <div id='dispTableTwo' class='storage2table'>
     <p>2-es raktár</p>
     <table>";
-        $createTables->createTable('2');
+        echo $createTables->createTable('2');
     echo"</table>
-    </div>";
+    </div>
+    </label>";
 
-    echo "<div class='storage1table'>
+
+    echo "<label for='dispTable'>
+    <div id='dispTableOne' class='storage1table'>
     <p>1-es raktár</p>
     <table>";
-        $createTables->createTable('1');
+        echo $createTables->createTable('1');
     echo"</table>
-    </div>";
+    </div>
+    </label>";
+
+    if(isset($_POST['btn-modify'])) 
+    {
+        $storageInMod = $_POST['newStorage'];
+        if($storageInMod == 'one') {
+            $dbstorageOne->modify();
+        }
+        else if($storageInMod == 'two') {
+             $dbstorageTwo->modify();
+        }
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        
+    }
     ?>
     <div><label for='modify'><p id='modify'></p></label></div>
 </body>

@@ -17,8 +17,9 @@ if(isset($_POST['selectedId'])) {
     echo"<div class='modify'>
         <h2>Kiválasztott elem adatai:</h2>
         <form method='post'>
+            <input type='hidden' id='modifyId' name='modifyId' value='{$selectedId}'></input>
             <p>Megnevezés:
-                <input id='newName' type='text' value='{$selected['name']}'></input></p>
+                <input id='newName' name='newName' type='text' value='{$selected['name']}'></input></p>
             <p>Raktár: 
                 <select id='newStorage' name='newStorage'>";
                     if($storage == 1) {
@@ -36,23 +37,25 @@ if(isset($_POST['selectedId'])) {
                 if($storage == 1) {
                     $numOfColumns = $dbstorageOne->getColumnNum();
                     for($i = 0; $i < $numOfColumns['countOfColumn']; $i++) {
-                    if($selected['shelfColumn']-1 == $i) {
-                        echo"<option value='{$i}' selected='true'>" . $i+1 . "</option>";
-                    }
-                    else {
-                        echo"<option value='{$i}'>" . $i+1 . "</option>";
-                    }
+                        $value = $i + 1;
+                        if($selected['shelfColumn']-1 == $i) {
+                            echo"<option value='{$value}' selected='true'>{$value}</option>";
+                        }
+                        else {
+                            echo"<option value='{$value}'>{$value}</option>";
+                        }
                   } 
                 }
                 else {
                     $numOfColumns = $dbstorageTwo->getColumnNum();
                     for($i = 0; $i < $numOfColumns['countOfColumn']; $i++) {
-                    if($selected['shelfColumn']-1 == $i) {
-                        echo"<option value='{$i}' selected='true'>" . $i+1 . "</option>";
-                    }
-                    else {
-                        echo"<option value='{$i}'>" . $i+1 . "</option>";
-                    }
+                        $value = $i + 1;
+                        if($selected['shelfColumn']-1 == $i) {
+                            echo"<option value='{$value}' selected='true'>{$value}</option>";
+                        }
+                        else {
+                            echo"<option value='{$value}'>{$value}</option>";
+                        }
                   } 
                 } 
                 echo"</select></p>
@@ -61,13 +64,14 @@ if(isset($_POST['selectedId'])) {
                 <select id='newRow' name='newRow'>";   
                     $numOfShelfs = $dbstorageOne->getRowNum();
                     for($i = 0; $i < $numOfShelfs['countOfRow']; $i++) {
-                        $selectable = $dbstorageOne->getByColumnAndRow(1, $i+1);
+                        $value = $i + 1;
+                        $selectable = $dbstorageOne->getByColumnAndRow(1, $value);
                         if($selected['shelfRow']-1 == $i) {
-                            echo"<option value='{$i}' selected='true'>" . $i+1 . "</option>";
+                            echo"<option value='{$value}' selected='true'>{$value}</option>";
                         }
                         else {
                             if($selectable['name'] == 'üres'){
-                                echo"<option value='{$i}'>" . $i+1 . "</option>";
+                                echo"<option value='{$value}'>{$value}</option>";
                             }                        
                         }                       
                     }  
@@ -75,12 +79,12 @@ if(isset($_POST['selectedId'])) {
             </p>
             <p>Darabszám:";
                 if($selected['name'] == 'üres'){
-                    echo"<input id='newQuantity' type='number' value='{$selected['quantity']}'></input>/<input id='newMax' type='number' value='{$selected['max']}'></input>";
+                    echo"<input id='newQuantity' name='newQuantity' type='number' value='{$selected['quantity']}'></input>/<input id='newMax' type='number' value='{$selected['max']}'></input>";
                 }
                 else {
-                    echo"<input id='newQuantity' type='number' value='{$selected['quantity']}'></input>/{$selected['max']}";
+                    echo"<input id='newQuantity' name='newQuantity' type='number' value='{$selected['quantity']}'></input>/{$selected['max']}";
                 }
             echo"</p>
-                <input type='submit' value='Módosítás'></input>/<input";
+                <input type='submit' id='btn-modify' name='btn-modify' value='Módosítás'></input><input";
         echo"</form>";
 }

@@ -3,8 +3,19 @@ function openOpcions(selectedId) {
         url: 'openModify.php',
         type: 'POST',
         data: {selectedId: selectedId},
-        success: function (resoult) {
-            $('#modify').html(resoult);
+        success: function (result) {
+            $('#modify').html(result);
+        }
+    })
+}
+
+function displayTable(tableNumber) {
+    $.ajax({
+        url: 'displayTable.php',
+        type: 'POST',
+        data: {tableNumber: tableNumber},
+        success: function (result) {
+            $('#dispTable'+tableNumber).html(result);
         }
     })
 }
