@@ -47,6 +47,12 @@ class DBStorageTwo extends DB {
         return $resoult->fetch_assoc();
     }
 
+    function getRowNum() {
+        $resoult = $this->mysqli->query("SELECT COUNT(DISTINCT shelfRow) AS countOfRow FROM storagetwo");
+
+        return $resoult->fetch_assoc();
+    }
+
     function getByColumnAndRow($column, $row) {
         $resoult = $this->mysqli->query("SELECT * FROM storagetwo WHERE shelfColumn = '$column' AND shelfRow = '$row'");
 
@@ -65,14 +71,28 @@ class DBStorageTwo extends DB {
         $newColumn = $_POST['newColumn'];
         $newRow = $_POST['newRow'];
         $newQuantity = $_POST['newQuantity'];
+        $max = $_POST['max'];
+        if(isset($_POST['isClear'])) {
+            $this->mysqli->query("UPDATE storagetwo SET name = 'üres', quantity = '0', max = '0' WHERE id = '$id'");
+            echo '<script>displayTable("Two")</script>;';
+            return null;
+        }
         if(isset($_POST['newMax'])) {
             $newMax = $_POST['newMax'];
-            $this->mysqli->query("UPDATE storageone SET name = '$newName', shelfColumn = '$newColumn', shelfRow = '$newRow', quantity = '$newQuantity', max = '$newMax' WHERE id = '$id'");
-            echo '<script>displayTable("Two")</script>;';           
+            $this->mysqli->query("UPDATE storagetwo SET name = '$newName', shelfColumn = '$newColumn', shelfRow = '$newRow', quantity = '$newQuantity', max = '$newMax' WHERE id = '$id'");
+            echo '<script>displayTable("Two")</script>;'; 
         }
         else {
-            $this->mysqli->query("UPDATE storageone SET name = '$newName', shelfColumn = '$newColumn', shelfRow = '$newRow', quantity = '$newQuantity' WHERE id = '$id'");
+            $this->mysqli->query("UPDATE storagetwo SET name = '$newName', shelfColumn = '$newColumn', shelfRow = '$newRow', quantity = '$newQuantity' WHERE id = '$id'");
             echo '<script>displayTable("Two")</script>;';
+        }
+
+        $oldColumn = $this->mysqli->query("SELECT shelfColumn FROM storagetwo WHERE id = '$id'")->fetch_assoc();
+        $oldRow = $this->mysqli->query("SELECT shelfRow FROM storagetwo WHERE id = '$id'")->fetch_assoc();
+        if($oldColumn['shelfColumn'] != $newColumn || $oldRow['shelfRow'] != $newRow) {
+            $newColumnId = $this->mysqli->query("SELECT id FROM storagetwo WHERE shelfColumn = '$newColumn' AND shelfRow = '$newRow'")->fetch_assoc();
+            $this->mysqli->query("UPDATE storagetwo SET name = '$newName', quantity = '$newQuantity', max = '$max' WHERE id = '" . $newColumnId['id'] ."'");
+            $this->mysqli->query("UPDATE storagetwo SET name = 'üres', quantity = '0', max = '0' WHERE id = '$id'");
         }
 
         unset($_POST);

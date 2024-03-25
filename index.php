@@ -87,10 +87,6 @@
              $dbstorageTwo->modify();
         }
     }
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        
-    }
     ?>
     <div><label for='modify'><p id='modify'></p></label></div>
 </body>

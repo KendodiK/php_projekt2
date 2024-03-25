@@ -71,6 +71,12 @@ class DBStorageOne extends DB {
         $newColumn = $_POST['newColumn'];
         $newRow = $_POST['newRow'];
         $newQuantity = $_POST['newQuantity'];
+        $max = $_POST['max'];
+        if(isset($_POST['isClear'])) {
+            $this->mysqli->query("UPDATE storageone SET name = 'üres', quantity = '0', max = '0' WHERE id = '$id'");
+            echo '<script>displayTable("One")</script>;';
+            return null;
+        }
         if(isset($_POST['newMax'])) {
             $newMax = $_POST['newMax'];
             $this->mysqli->query("UPDATE storageone SET name = '$newName', quantity = '$newQuantity', max = '$newMax' WHERE id = '$id'");
@@ -83,9 +89,9 @@ class DBStorageOne extends DB {
 
         $oldColumn = $this->mysqli->query("SELECT shelfColumn FROM storageone WHERE id = '$id'")->fetch_assoc();
         $oldRow = $this->mysqli->query("SELECT shelfRow FROM storageone WHERE id = '$id'")->fetch_assoc();
-        if($oldColumn['shelfColumn'] != $newColumn || $oldRow != $newRow) {
+        if($oldColumn['shelfColumn'] != $newColumn || $oldRow['shelfRow'] != $newRow) {
             $newColumnId = $this->mysqli->query("SELECT id FROM storageone WHERE shelfColumn = '$newColumn' AND shelfRow = '$newRow'")->fetch_assoc();
-            $this->mysqli->query("UPDATE storageone SET name = '$newName', quantity = '$newQuantity' WHERE id = '" . $newColumnId['id'] ."'");
+            $this->mysqli->query("UPDATE storageone SET name = '$newName', quantity = '$newQuantity', max = '$max' WHERE id = '" . $newColumnId['id'] ."'");
             $this->mysqli->query("UPDATE storageone SET name = 'üres', quantity = '0', max = '0' WHERE id = '$id'");
         }
 
