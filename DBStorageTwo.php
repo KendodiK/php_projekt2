@@ -97,4 +97,20 @@ class DBStorageTwo extends DB {
 
         unset($_POST);
     }
+
+    function addColumn() {
+        $resoultOfGetIdMax = $this->mysqli->query("SELECT MAX(id) AS maxId FROM ( SELECT id FROM storageone UNION All SELECT id FROM storagetwo) AS combinated_id");
+        $maxId = $resoultOfGetIdMax->fetch_assoc();
+        $numOfRow = $this->getRowNum();
+        $numOfColumn = $this->getColumnNum();
+        for($i = 0; $i < $numOfRow['countOfRow']; $i++) {
+            $id = $maxId['maxId']+$i+1;
+            $newColumn = $numOfColumn['countOfColumn']+1;
+            $newRow = $i+1;
+            $this->mysqli->query("INSERT INTO storagetwo (id, name, quantity, max, shelfColumn, shelfRow) VALUES ('$id', 'üres', '0', '0', '$newColumn', '$newRow')");
+        }
+        echo '<script>displayTable("Two")</script>;';
+
+        unset($_POST);
+    }
 }

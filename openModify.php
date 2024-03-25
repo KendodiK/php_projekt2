@@ -61,7 +61,6 @@ if(isset($_POST['selectedId'])) {
                 } 
                 echo"</select></p>
             </p>
-            <p><input id='isNewShelf' name='isNewShelf' type='checkbox'>Új polcsor hozzáadása</input></p>
             <p>Polc:
                 <select id='newRow' name='newRow'>";   
                     if($storage == 1) {

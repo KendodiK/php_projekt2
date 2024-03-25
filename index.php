@@ -64,6 +64,9 @@
     <table>";
         echo $createTables->createTable('2');
     echo"</table>
+    <form method='POST'>
+        <input type='submit' id='newColumnTwo' name='newColumnTwo' value='Új polcsor hozzáadása'></input>
+    </form>
     </div>
     </label>";
 
@@ -74,6 +77,9 @@
     <table>";
         echo $createTables->createTable('1');
     echo"</table>
+    <form method='POST'>
+        <input type='submit' id='newColumnOne' name='newColumnOne' value='Új polcsor hozzáadása'></input>
+    </form>
     </div>
     </label>";
 
@@ -87,6 +93,26 @@
              $dbstorageTwo->modify();
         }
     }
+
+    if(isset($_POST['newColumnOne'])) {
+        $dbstorageOne->addColumn();
+    }
+
+    if(isset($_POST['newColumnTwo'])) {
+        $dbstorageTwo->addColumn();
+    }
+
+    if(isset($_POST['btn-deleteColumn'])){
+        $deletableColumnStorage = $_POST['deletableColumnStorage'];
+        $deletableColumnNum = $_POST['deletableColumnNum'];
+        if ($deletableColumnStorage == 'One') {
+            $dbstorageOne->deleteColumn($deletableColumnNum);
+        }
+        else if ($deletableColumnStorage == 'Two') {
+            $dbstorageTwo->deleteColumn($deletableColumnNum);
+        }
+    }
+
     ?>
     <div><label for='modify'><p id='modify'></p></label></div>
 </body>

@@ -55,6 +55,18 @@
                         $result .= "<td><button onclick='openOpcions(\"{$id}\")' class='{$classForCss}' id='btn-open-{$id}'>{$value}</button></td>";
                     }
                 $result .= "</tr>";
+                if ($i == count($table)/$numberOfShelfs['countOfColumn']-1) {
+                    $result .= "<tr>";
+                        for($j = 0; $j < $numberOfShelfs['countOfColumn']; $j++) {
+                            $columnNum = $j+1;
+                            $result .= "<td><form method='POST'>
+                                <input type='hidden' id='deletableColumnStorage' name='deletableColumnStorage' value='{$tableNum}'></input>
+                                <input type='hidden' id='deletableColumnNum' name='deletableColumnNum' value='{$columnNum}'></input>
+                                <input type='submit' id='btn-deleteColumn' name='btn-deleteColumn' value='polcsor törése'></input>
+                                </from></td>";
+                        }
+                    $result .= "</tr>";
+                }
             }
 
             return $result;
